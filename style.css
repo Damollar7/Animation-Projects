@@ -1,0 +1,100 @@
+body{margin:0;background:#14202b;color:#fff;font-family:Arial,sans-serif;text-align:center;scroll-behavior:smooth}
+a{color:#7de3d0;font-size:20px}
+button{padding:8px 16px;font-size:16px;border:0;border-radius:6px;background:#7de3d0;cursor:pointer}
+.stage{position:relative;width:600px;height:450px;margin:20px auto;border-radius:12px;overflow:hidden}
+
+/* ---------- cat and mouse ---------- */
+.floor{background:#e9d8b4}
+#cat{position:absolute;left:0;top:0;width:600px;height:450px;z-index:5}
+.tail{position:absolute;left:335px;top:240px;width:20px;height:90px;background:#6b7280;border-radius:10px;transform-origin:top;animation:swish 1.2s ease-in-out infinite alternate}
+@keyframes swish{from{transform:rotate(-20deg)}to{transform:rotate(30deg)}}
+.cat-body{position:absolute;left:245px;top:210px;width:110px;height:140px;background:#6b7280;border-radius:50%}
+#head{position:absolute;left:245px;top:150px;width:110px;height:90px;background:#6b7280;border-radius:50%}
+.ear{position:absolute;top:-22px;border-left:16px solid transparent;border-right:16px solid transparent;border-bottom:34px solid #6b7280}
+.ear.l{left:6px}.ear.r{right:6px}
+.eye{position:absolute;top:28px;width:26px;height:30px;background:#fef9c3;border-radius:50%}
+.eye.l{left:20px}.eye.r{right:20px}
+.pupil{position:absolute;left:9px;top:8px;width:8px;height:14px;background:#000;border-radius:50%}
+.nose{position:absolute;left:48px;top:62px;width:14px;height:10px;background:#f9a8d4;border-radius:50%}
+.mouse{position:absolute;width:40px;height:22px;background:#9ca3af;border-radius:50%}
+.mouse::before{content:"";position:absolute;right:0;top:8px;width:7px;height:7px;background:#f472b6;border-radius:50%}
+.mouse::after{content:"";position:absolute;left:-24px;top:10px;width:26px;height:3px;background:#8b6b6b}
+
+/* ---------- rotating car ---------- */
+.grass{background:#2a6b3c}
+#track{position:absolute;left:100px;top:25px;width:400px;height:400px;border:80px solid #374151;border-radius:50%;box-sizing:border-box}
+#line{position:absolute;left:140px;top:65px;width:320px;height:320px;border:3px dashed #e5e7eb;border-radius:50%;box-sizing:border-box}
+#pivot{position:absolute;left:293px;top:218px;width:14px;height:14px;background:#fff;border-radius:50%}
+#car{position:absolute;left:0;top:0;width:60px;height:30px;background:#7de3d0;border-radius:8px}
+#car::before{content:"";position:absolute;left:20px;top:4px;width:18px;height:22px;background:#1e3a4a;border-radius:4px}
+.wheel{position:absolute;width:14px;height:6px;background:repeating-linear-gradient(90deg,#111 0 3px,#888 3px 5px);animation:roll .25s linear infinite}
+@keyframes roll{to{background-position:5px 0}}
+
+
+/* ---------- The Summit (drama) ---------- */
+#replay{display:none;margin-top:6px;padding:8px 16px;font-size:16px;border:0;border-radius:6px;background:#7de3d0;cursor:pointer}
+/* CSS for the Summit drama only */
+
+#stage{position:relative;width:700px;height:420px;margin:20px auto;overflow:hidden;border-radius:12px;background:linear-gradient(#0e1a28,#1c2c3a)}
+.mountain{position:absolute;left:250px;bottom:50px;border-left:200px solid transparent;border-right:200px solid transparent;border-bottom:260px solid #0a1520}
+.ground{position:absolute;left:0;bottom:0;width:100%;height:50px;background:#0b1118}
+.person{position:absolute;bottom:50px;width:130px;height:220px}
+
+/* ---- me: one leg and a crutch ---- */
+#me{left:100px;width:100px;height:240px}
+
+/* ---- the doubter ---- */
+#foe{left:520px}
+.coat{position:absolute;top:55px;left:20px;width:80px;height:165px;background:#2a1b3d;clip-path:polygon(25% 0,75% 0,100% 100%,0 100%)}
+.foe-head{position:absolute;top:8px;left:38px;width:44px;height:44px;background:#d9c7b8;border-radius:50%;transition:transform 1s}
+.foe-head::before{content:"";position:absolute;left:-10px;top:-4px;width:64px;height:9px;background:#1a1226}
+.foe-head::after{content:"";position:absolute;left:2px;top:-26px;width:40px;height:22px;background:#1a1226}
+.foe-head b{position:absolute;top:20px;width:8px;height:4px;background:#e5484d}
+.foe-head b:first-child{left:8px}
+.foe-head b:last-child{right:8px}
+#foe.bow .foe-head{transform:translateY(12px)}
+
+/* ---- speech, rain, lightning ---- */
+#bubble{position:absolute;bottom:305px;width:250px;min-height:50px;padding:12px;background:#08121a;border:2px solid #fff;border-radius:12px;font:18px Georgia,serif;text-align:left}
+#bubble.me{left:80px;border-color:#7de3d0}
+#bubble.foe{left:380px;border-color:#e5484d}
+.drop{position:absolute;top:-20px;width:2px;height:14px;background:rgba(180,200,220,.5);animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(480px)}}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+#flash.on{animation:bolt .6s}
+@keyframes bolt{0%,40%{opacity:.9}20%{opacity:.2}100%{opacity:0}}
+.shake{animation:shake .6s}
+@keyframes shake{20%{transform:translate(-8px,4px)}40%{transform:translate(8px,-4px)}60%{transform:translate(-6px,-3px)}80%{transform:translate(6px,3px)}}
+
+/* my photo, one leg, with a crutch */
+#me img{position:absolute;left:0;bottom:0;height:240px}
+.crutch{position:absolute;left:4px;top:46px;width:5px;height:194px;background:#c8a46a;transform:rotate(10deg);transform-origin:top;z-index:2}
+.crutch::before{content:"";position:absolute;left:-9px;top:0;width:24px;height:6px;background:#c8a46a;border-radius:3px}
+#me.talk img{animation:bob .3s ease-in-out infinite alternate}
+@keyframes bob{to{transform:translateY(-3px)}}
+/* hopping forward on the crutch */
+#me.hop{animation:hop .5s ease-in-out infinite}
+#me.hop .crutch{animation:swing .5s ease-in-out infinite}
+@keyframes hop{50%{transform:translateY(-16px)}}
+@keyframes swing{50%{transform:rotate(28deg)}}
+
+/* ---------- one page layout ---------- */
+header{padding:36px 16px 24px;background:linear-gradient(#1b2d3c,#14202b);border-bottom:1px solid #26394a}
+header h1{margin:0 0 8px;font-size:34px}
+header p{margin:0;color:#9fb4c0;font-size:16px}
+nav{position:sticky;top:0;z-index:50;background:#101a23;padding:10px;border-bottom:1px solid #26394a;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+nav a{font-size:15px;text-decoration:none;padding:7px 14px;border:1px solid #2c4356;border-radius:20px}
+nav a:hover{background:#7de3d0;color:#14202b}
+main{max-width:780px;margin:0 auto;padding:24px 16px 40px}
+section{background:#1a2937;border:1px solid #26394a;border-radius:16px;padding:22px 18px 24px;margin-bottom:28px;scroll-margin-top:70px}
+.num{display:inline-block;width:34px;height:34px;line-height:34px;border-radius:50%;background:#7de3d0;color:#14202b;font-weight:bold;margin-bottom:8px}
+section h2{margin:0 0 6px;font-size:24px}
+.sub{margin:0 auto 6px;color:#9fb4c0;font-size:15px;max-width:520px}
+.wrap{display:flex;justify-content:center;overflow-x:auto}
+.wrap .stage,.wrap #stage{margin:14px 0;flex:none;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.controls{display:inline-flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;background:#101a23;padding:10px 18px;border-radius:30px;margin-top:4px}
+.controls b{display:inline-block;min-width:48px;color:#7de3d0}
+input[type=range]{accent-color:#7de3d0}
+footer{padding:20px;color:#7f94a3;font-size:14px;border-top:1px solid #26394a}
+@media(max-width:700px){.wrap .stage,.wrap #stage{zoom:.55}header h1{font-size:26px}}
+

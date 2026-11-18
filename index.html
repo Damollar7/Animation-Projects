@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Animation Project</title>
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<header><h1>Animation Project</h1><p>Computer Graphics and Animation: three small animations made with HTML, CSS and JavaScript</p></header>
+<nav><a href="#cat-project">1. Cat and Mouse</a><a href="#car-project">2. Rotating Car</a><a href="#drama-project">3. Handicap Drama</a></nav>
+<main>
+
+<section id="cat-project"><span class="num">1</span><h2>Cat and Mouse</h2>
+<p class="sub">The mouse runs round the cat. The cat keeps watching it.</p>
+<div class="wrap"><div class="stage floor">
+  <div id="cat">
+    <div class="tail"></div>
+    <div class="cat-body"></div>
+    <div id="head">
+      <div class="ear l"></div><div class="ear r"></div>
+      <div class="eye l"><div class="pupil"></div></div>
+      <div class="eye r"><div class="pupil"></div></div>
+      <div class="nose"></div>
+    </div>
+  </div>
+  <div class="mouse" id="mouse"></div>
+</div>
+</div></section>
+
+<section id="car-project"><span class="num">2</span><h2>Rotating Car</h2>
+<p class="sub">The car goes round the white centre point (the axis). Use the slider to change the speed.</p>
+<div class="wrap"><div class="stage grass">
+  <div id="track"></div>
+  <div id="line"></div>
+  <div id="pivot"></div>
+  <div id="car">
+    <div class="wheel" style="left:6px;top:-4px"></div>
+    <div class="wheel" style="left:40px;top:-4px"></div>
+    <div class="wheel" style="left:6px;top:28px"></div>
+    <div class="wheel" style="left:40px;top:28px"></div>
+  </div>
+</div>
+</div>
+<div class="controls">Speed: <input type="range" id="speed" min="0" max="5" step="0.5" value="2"> Angle: <b id="deg">0°</b></div></section>
+
+<section id="drama-project"><span class="num">3</span><h2>Handicap Drama</h2>
+<p class="sub">A man with one leg and a crutch climbs toward the mountain. A doubter tells him to give up.</p>
+<div class="wrap"><div id="stage">
+    <div class="mountain"></div>
+    <div class="ground"></div>
+
+    <!-- me, using my own photo, on one leg and a crutch -->
+    <div class="person" id="me">
+      <img src="me.png" alt="me">
+      <div class="crutch"></div>
+    </div>
+
+    <!-- the doubter -->
+    <div class="person" id="foe">
+      <div class="coat"></div>
+      <div class="foe-head"><b></b><b></b></div>
+    </div>
+
+    <div id="bubble"></div>
+    <div id="flash"></div>
+  </div>
+  </div>
+<button id="replay">Replay</button></section>
+
+</main>
+<footer>Animation Project</footer>
+<script src="script.js"></script>
+</body></html>
